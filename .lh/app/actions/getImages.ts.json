@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/actions/getImages.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1765969955283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1765969955283,
+            "name": "Commit-0",
+            "content": "'use server';\nimport cloudinary from '@/lib/cloudinary';\n\nexport async function getImages() {\n  const result = await cloudinary.search\n    .expression('folder:vision-friend') // 这里是你的 Cloudinary 文件夹\n    .sort_by('created_at', 'desc')\n    .max_results(50) // 最多 50 张\n    .execute();\n\n  return result.resources;\n}"
+        }
+    ]
+}

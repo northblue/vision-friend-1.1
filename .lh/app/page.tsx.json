@@ -1,0 +1,26 @@
+{
+    "sourceFile": "app/page.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1765967691979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1765969899974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,28 +1,22 @@\n-async function getImages() {\n-  const res = await fetch('http://localhost:3000/api/images', {\n-    cache: 'no-store',\n-  });\n+import { getImages } from './actions/getImages';\n \n-  return res.json();\n-}\n+export const revalidate = 60; // 页面缓存 60 秒\n \n export default async function Home() {\n   const images = await getImages();\n \n   return (\n     <main className=\"p-6\">\n-      <h1 className=\"text-3xl font-bold mb-6\">\n-        Vision Friend\n-      </h1>\n+      <h1 className=\"text-3xl font-bold mb-6\">Vision Friend</h1>\n \n       <div className=\"grid grid-cols-2 md:grid-cols-4 gap-4\">\n         {images.map((img: any) => (\n           <img\n             key={img.public_id}\n             src={img.secure_url}\n             alt=\"\"\n-            className=\"w-full h-auto rounded\"\n+            className=\"rounded shadow-sm\"\n           />\n         ))}\n       </div>\n     </main>\n"
+                },
+                {
+                    "date": 1765970067307,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { getImages } from './actions/getImages';\n \n-export const revalidate = 60; // 页面缓存 60 秒\n+export const revalidate = 5; // 页面缓存 60 秒\n \n export default async function Home() {\n   const images = await getImages();\n \n"
+                }
+            ],
+            "date": 1765967691979,
+            "name": "Commit-0",
+            "content": "async function getImages() {\n  const res = await fetch('http://localhost:3000/api/images', {\n    cache: 'no-store',\n  });\n\n  return res.json();\n}\n\nexport default async function Home() {\n  const images = await getImages();\n\n  return (\n    <main className=\"p-6\">\n      <h1 className=\"text-3xl font-bold mb-6\">\n        Vision Friend\n      </h1>\n\n      <div className=\"grid grid-cols-2 md:grid-cols-4 gap-4\">\n        {images.map((img: any) => (\n          <img\n            key={img.public_id}\n            src={img.secure_url}\n            alt=\"\"\n            className=\"w-full h-auto rounded\"\n          />\n        ))}\n      </div>\n    </main>\n  );\n}"
+        }
+    ]
+}

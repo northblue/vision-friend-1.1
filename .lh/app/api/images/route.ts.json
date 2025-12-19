@@ -1,0 +1,26 @@
+{
+    "sourceFile": "app/api/images/route.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1765967491916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1765967543264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,21 @@\n+import { NextResponse } from 'next/server';\n+import cloudinary from '@/lib/cloudinary';\n+\n+export async function GET() {\n+  try {\n+    const folder = process.env.CLOUDINARY_FOLDER || \"vision-friend\";\n+    const result = await cloudinary.search\n+      .expression('folder:vision-friend')\n+      .sort_by('created_at', 'desc')\n+      .max_results(50)\n+      .execute();\n+\n+    return NextResponse.json(result.resources);\n+  } catch (error) {\n+    console.error(error);\n+    return NextResponse.json(\n+      { error: 'Failed to fetch images' },\n+      { status: 500 }\n+    );\n+  }\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1765967614002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n export async function GET() {\n   try {\n     const folder = process.env.CLOUDINARY_FOLDER || \"vision-friend\";\n     const result = await cloudinary.search\n-      .expression('folder:vision-friend')\n+      .expression(`folder:${folder}/*`)\n       .sort_by('created_at', 'desc')\n       .max_results(50)\n       .execute();\n \n@@ -17,25 +17,5 @@\n       { error: 'Failed to fetch images' },\n       { status: 500 }\n     );\n   }\n-}\n-import { NextResponse } from 'next/server';\n-import cloudinary from '@/lib/cloudinary';\n-\n-export async function GET() {\n-  try {\n-    const result = await cloudinary.search\n-      .expression('folder:vision-friend')\n-      .sort_by('created_at', 'desc')\n-      .max_results(50)\n-      .execute();\n-\n-    return NextResponse.json(result.resources);\n-  } catch (error) {\n-    console.error(error);\n-    return NextResponse.json(\n-      { error: 'Failed to fetch images' },\n-      { status: 500 }\n-    );\n-  }\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1765967491916,
+            "name": "Commit-0",
+            "content": "import { NextResponse } from 'next/server';\nimport cloudinary from '@/lib/cloudinary';\n\nexport async function GET() {\n  try {\n    const result = await cloudinary.search\n      .expression('folder:vision-friend')\n      .sort_by('created_at', 'desc')\n      .max_results(50)\n      .execute();\n\n    return NextResponse.json(result.resources);\n  } catch (error) {\n    console.error(error);\n    return NextResponse.json(\n      { error: 'Failed to fetch images' },\n      { status: 500 }\n    );\n  }\n}"
+        }
+    ]
+}

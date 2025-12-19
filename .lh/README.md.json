@@ -1,0 +1,34 @@
+{
+    "sourceFile": "README.md",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1765970288394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1765970361164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n # Vision Friend\n \n-**Vision Friend** is a personal project to showcase my son's drawings and doodles, and at the same time serves as a learning platform for **Next.js + React + Server Actions + Cloudinary**.  \n+**Vision Friend** is a personal project to showcase my son's drawings and doodles, and at the same time serves as a learning platform for **Next.js 16 + React + Server Actions + Cloudinary**.  \n \n ---\n \n ## Project Overview\n \n-- Frontend built with **Next.js App Router**  \n+- Frontend built with **Next.js 16 App Router**  \n - Images stored on **Cloudinary**, accessed directly via **Server Actions**  \n - Data management using **Prisma + SQLite** (planned for later phases)  \n - Responsive layout for mobile, tablet, desktop, and even smart TV  \n - Goal: simple, maintainable, low-cost, and focused on learning modern frontend techniques  \n@@ -17,9 +17,9 @@\n ## Tech Stack\n \n | Technology | Purpose |\n |------------|---------|\n-| Next.js 15 (App Router) | Frontend framework |\n+| Next.js 16 (App Router) | Frontend framework |\n | React 18 | UI building |\n | Tailwind CSS | Styling and responsive layout |\n | Cloudinary | Image storage and delivery |\n | Prisma + SQLite | Data management (future phase) |\n@@ -31,16 +31,16 @@\n \n - Fetches a list of images from a specified Cloudinary folder  \n - Uses **Server Actions** to access data directly within Server Components  \n - Renders a responsive image gallery  \n-- Leverages latest Next.js features, including App Router and Server Components  \n+- Leverages Next.js 16 features, including App Router and Server Components  \n - Page caching with `revalidate = 60` seconds to ensure Cloudinary updates are reflected  \n \n ---\n \n ## Learning Highlights\n \n-1. **Next.js App Router & Server Components**  \n+1. **Next.js 16 App Router & Server Components**  \n    - Understanding SSR and client-side hydration  \n    - Using `revalidate` to control page caching  \n    - Server Actions as a secure alternative to API fetch  \n \n"
+                },
+                {
+                    "date": 1765970368539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n - Fetches a list of images from a specified Cloudinary folder  \n - Uses **Server Actions** to access data directly within Server Components  \n - Renders a responsive image gallery  \n - Leverages Next.js 16 features, including App Router and Server Components  \n-- Page caching with `revalidate = 60` seconds to ensure Cloudinary updates are reflected  \n+- Page caching with `revalidate = 605` seconds to ensure Cloudinary updates are reflected  \n \n ---\n \n ## Learning Highlights\n"
+                },
+                {
+                    "date": 1765970677475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n - Fetches a list of images from a specified Cloudinary folder  \n - Uses **Server Actions** to access data directly within Server Components  \n - Renders a responsive image gallery  \n - Leverages Next.js 16 features, including App Router and Server Components  \n-- Page caching with `revalidate = 605` seconds to ensure Cloudinary updates are reflected  \n+- Page caching with `revalidate = 5` seconds to ensure Cloudinary updates are reflected  \n \n ---\n \n ## Learning Highlights\n@@ -66,5 +66,6 @@\n # Run development server\n npm run dev\n \n # Open in browser\n-http://localhost:3000\n\\ No newline at end of file\n+http://localhost:3000\n+\n"
+                },
+                {
+                    "date": 1765970683343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,5 +68,5 @@\n \n # Open in browser\n http://localhost:3000\n \n-## Learning Highlights\n\\ No newline at end of file\n+## \n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1765970288394,
+            "name": "Commit-0",
+            "content": "# Vision Friend\n\n**Vision Friend** is a personal project to showcase my son's drawings and doodles, and at the same time serves as a learning platform for **Next.js + React + Server Actions + Cloudinary**.  \n\n---\n\n## Project Overview\n\n- Frontend built with **Next.js App Router**  \n- Images stored on **Cloudinary**, accessed directly via **Server Actions**  \n- Data management using **Prisma + SQLite** (planned for later phases)  \n- Responsive layout for mobile, tablet, desktop, and even smart TV  \n- Goal: simple, maintainable, low-cost, and focused on learning modern frontend techniques  \n\n---\n\n## Tech Stack\n\n| Technology | Purpose |\n|------------|---------|\n| Next.js 15 (App Router) | Frontend framework |\n| React 18 | UI building |\n| Tailwind CSS | Styling and responsive layout |\n| Cloudinary | Image storage and delivery |\n| Prisma + SQLite | Data management (future phase) |\n| Server Actions | Replace API fetch for secure server-side data access |\n\n---\n\n## Phase 1 Features\n\n- Fetches a list of images from a specified Cloudinary folder  \n- Uses **Server Actions** to access data directly within Server Components  \n- Renders a responsive image gallery  \n- Leverages latest Next.js features, including App Router and Server Components  \n- Page caching with `revalidate = 60` seconds to ensure Cloudinary updates are reflected  \n\n---\n\n## Learning Highlights\n\n1. **Next.js App Router & Server Components**  \n   - Understanding SSR and client-side hydration  \n   - Using `revalidate` to control page caching  \n   - Server Actions as a secure alternative to API fetch  \n\n2. **Cloudinary API Usage**  \n   - Securely fetch private images  \n   - Sorting and pagination (up to 50 images)  \n\n3. **Responsive Layout**  \n   - Tailwind `grid` + `md:grid-cols-4` for multi-screen support  \n\n4. **Environment Variables Management**  \n   - Using `.env.local` to store Cloudinary credentials  \n   - Keeps sensitive information out of version control  \n\n---\n\n## Local Setup\n\n```bash\n# Install dependencies\nnpm install\n\n# Run development server\nnpm run dev\n\n# Open in browser\nhttp://localhost:3000"
+        }
+    ]
+}
